@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glassdocs - the transparency layer for AI-authored code</title>
+  <meta name="description" content="Agents write the docs. You read and approve. Future agents must stay in line. Glassdocs is the open-source transparency layer for AI-authored code." />
+
+  <meta property="og:title" content="Glassdocs - see everything your AI did." />
+  <meta property="og:description" content="Agents write the docs. You approve them. Future agents honor them. The transparency layer for AI-authored code, by Rocket Lab." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="assets/logo-dark.svg" alt="Rocket Lab" class="nav-logo" />
+        <span class="nav-divider">/</span>
+        Glassdocs
+      </a>
+      <div class="nav-links">
+        <a href="#problem">Why</a>
+        <a href="#loop">The loop</a>
+        <a href="#how">How it works</a>
+        <a href="https://github.com/Glassdocs/glassdocs">GitHub</a>
+        <a href="#install" class="nav-cta">Install</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="hero-eyebrow">Open source - by Rocket Lab</span>
+      <h1>See everything your AI <span class="accent">did.</span></h1>
+      <p class="hero-sub">
+        Your agents ship code you never wrote. Glassdocs makes them document every change into your repo as HTML.
+        You read, curate, approve. Future agents must stay in line with what you accepted, or their work is rejected.
+        No more blackbox.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#install">Install the extension</a>
+        <a class="btn btn-secondary" href="https://github.com/Glassdocs/glassdocs">View on GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="problem">
+    <div class="wrap">
+      <div class="section-eyebrow">The problem</div>
+      <h2 class="section-title">You stopped writing. But you still need to know what shipped.</h2>
+      <p class="section-lede">
+        Prompting replaced writing. Agents produce most of the code, most of the copy, most of the config. You review a diff,
+        maybe. You approve a PR, maybe. But you do not fully understand what your AI built - and the documentation layer to
+        surface it was never designed for this world.
+      </p>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <span class="stat">Blackbox</span>
+          <h3>AI ships code you did not write</h3>
+          <p>Thousands of lines per week, across files you never opened. You are the accountable party for software you have
+          never read line by line. The diff view is not enough.</p>
+        </div>
+        <div class="problem-card">
+          <span class="stat">Markdown</span>
+          <h3>A format built for writers</h3>
+          <p>Markdown exists to help humans author text efficiently. Humans are no longer the authors. Keeping a markdown
+          pipeline for docs you no longer write is legacy infrastructure.</p>
+        </div>
+        <div class="problem-card">
+          <span class="stat">No memory</span>
+          <h3>Every prompt starts from zero</h3>
+          <p>Your agent has no record of what was approved last time, what patterns you accepted, what decisions you already
+          made. It rediscovers your codebase on every task - and contradicts itself.</p>
+        </div>
+        <div class="problem-card">
+          <span class="stat">No audit</span>
+          <h3>No record of what the AI changed</h3>
+          <p>Commits tell you what files changed. They do not tell you what your AI decided, what it assumed, or what corners
+          of the system it touched that you did not review.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="loop">
+    <div class="wrap">
+      <div class="section-eyebrow">The loop</div>
+      <h2 class="section-title">Agents write. You approve. Agents obey.</h2>
+      <p class="section-lede">
+        Glassdocs establishes a three-step cycle between you and your AI. Each role has its own verb. Each step reinforces the
+        next. Together they turn AI-authored code from a blackbox into a system you actually govern.
+      </p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">1</div>
+          <h3>Agents write the docs</h3>
+          <p>
+            Every change your AI makes comes with documentation - written by the agent, into <code>docs/</code>, as HTML.
+            One commit carries both the code and the human-readable explanation of what happened.
+          </p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">2</div>
+          <h3>You read and approve</h3>
+          <p>
+            You do not write docs. You read them, curate them, and accept them as the record of truth. Visual, navigable,
+            renders in any browser. Edit what is wrong, approve what is right.
+          </p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">3</div>
+          <h3>Agents obey the docs</h3>
+          <p>
+            On every future prompt, the agent reads the approved docs before touching code. Work that contradicts them is
+            flagged and rejected. The docs become the contract - enforced, not aspirational.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-eyebrow">How it works</div>
+      <h2 class="section-title">Drop-in for any repo. No build step. No framework.</h2>
+
+      <div class="how">
+        <ol class="how-steps">
+          <li class="how-step">
+            <div class="how-num">1</div>
+            <div>
+              <h4>Add Glassdocs to your repo</h4>
+              <p>One command scaffolds a <code>docs/</code> folder, the navigation shell, and the agent instructions that tell every future agent how to write into it.</p>
+            </div>
+          </li>
+          <li class="how-step">
+            <div class="how-num">2</div>
+            <div>
+              <h4>Your agent works. It also documents.</h4>
+              <p>Whatever your agent builds - features, refactors, migrations - lands with an HTML doc page explaining what, why, and where. No separate documentation task. No drift.</p>
+            </div>
+          </li>
+          <li class="how-step">
+            <div class="how-num">3</div>
+            <div>
+              <h4>You review the docs in the PR</h4>
+              <p>The docs ARE the diff you read. Visual, structured, navigable. You approve or edit the docs - and the code lands alongside.</p>
+            </div>
+          </li>
+          <li class="how-step">
+            <div class="how-num">4</div>
+            <div>
+              <h4>Future agents read before they write</h4>
+              <p>The Glassdocs extension feeds approved docs back into every new agent session. Your AI cannot contradict what you already signed off on.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="code-frame">
+          <div class="code-frame-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="path">docs/auth/session-flow.html</span>
+          </div>
+<pre><span class="tk-cmt">&lt;!-- Written by agent 2026-04-23. Approved by @sergey. --&gt;</span>
+<span class="tk-tag">&lt;article</span> <span class="tk-attr">class</span>=<span class="tk-str">"doc"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;h1&gt;</span>Session flow<span class="tk-tag">&lt;/h1&gt;</span>
+
+  <span class="tk-tag">&lt;p&gt;</span>Sessions are issued as signed cookies.
+  Rotation happens on every privileged action.<span class="tk-tag">&lt;/p&gt;</span>
+
+  <span class="tk-tag">&lt;h2&gt;</span>Invariants<span class="tk-tag">&lt;/h2&gt;</span>
+  <span class="tk-tag">&lt;ul&gt;</span>
+    <span class="tk-tag">&lt;li&gt;</span>No token in localStorage.<span class="tk-tag">&lt;/li&gt;</span>
+    <span class="tk-tag">&lt;li&gt;</span>Cookie is httpOnly and SameSite=Lax.<span class="tk-tag">&lt;/li&gt;</span>
+  <span class="tk-tag">&lt;/ul&gt;</span>
+<span class="tk-tag">&lt;/article&gt;</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <div class="cta-block">
+        <h2>Stop shipping blackbox code.</h2>
+        <p>Install the extension, point it at your repo, and the next thing your agent ships will come with docs. Open source. MIT licensed. Free forever.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#">Get the extension</a>
+          <a class="btn btn-secondary" href="https://github.com/Glassdocs/glassdocs">Star on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-dark.svg" alt="Rocket Lab" class="footer-logo" />
+          <p>Glassdocs is open-source infrastructure for the post-writing era, by Rocket Lab. Built because AI-authored code deserves a window, not a wall.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="#problem">Why</a></li>
+            <li><a href="#loop">The loop</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#install">Install</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="https://docs.docsplaybook.dev">Documentation</a></li>
+            <li><a href="https://github.com/Glassdocs/glassdocs">GitHub</a></li>
+            <li><a href="https://github.com/Glassdocs/glassdocs/issues">Issues</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Rocket Lab</h5>
+          <ul>
+            <li><a href="https://rocketlab.com.au">Website</a></li>
+            <li><a href="mailto:hello@rocketlab.com.au">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Rocket Lab. MIT licensed.</span>
+        <span>Agents wrote. Humans approved.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
