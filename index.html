@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Glassdocs - the transparency layer for AI-authored code</title>
-  <meta name="description" content="Agents write the docs. You read and approve. Future agents must stay in line. Glassdocs is the open-source transparency layer for AI-authored code." />
+  <title>Glassdocs - documentation as the contract for what shipped</title>
+  <meta name="description" content="A documentation-first stance for software transparency. Whoever writes the code - human or AI - the team reads, approves, and binds future work to what was accepted." />
 
-  <meta property="og:title" content="Glassdocs - see everything your AI did." />
-  <meta property="og:description" content="Agents write the docs. You approve them. Future agents honor them. The transparency layer for AI-authored code." />
+  <meta property="og:title" content="Glassdocs - code your team can actually see" />
+  <meta property="og:description" content="Documentation-first software. Whoever writes (human or agent), the team approves, future work obeys. Especially useful when AI is shipping your code." />
   <meta property="og:type" content="website" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -22,6 +22,8 @@
         <a href="#problem">Why</a>
         <a href="#loop">The loop</a>
         <a href="#how">How it works</a>
+        <a href="#agents">For AI teams</a>
+        <a href="hosting.html">Hosting</a>
         <a href="https://github.com/Glassdocs/glassdocs">GitHub</a>
         <a href="#install" class="nav-cta">Install</a>
       </div>
@@ -31,11 +33,11 @@
   <header class="hero">
     <div class="wrap">
       <span class="hero-eyebrow">Open source</span>
-      <h1>See everything your AI <span class="accent">did.</span></h1>
+      <h1>Code your team can <span class="accent">actually see.</span></h1>
       <p class="hero-sub">
-        Your agents ship code you never wrote. Glassdocs makes them document every change into your repo as HTML.
-        You read, curate, approve. Future agents must stay in line with what you accepted, or their work is rejected.
-        No more blackbox.
+        Glassdocs is a documentation-first stance for software transparency. Whoever wrote the code - a teammate,
+        an inherited service, an AI agent - the docs live in your repo as HTML. Your team reads, curates, approves.
+        Future work must stay aligned with what was accepted.
       </p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#install">Install the extension</a>
@@ -47,37 +49,37 @@
   <section id="problem">
     <div class="wrap">
       <div class="section-eyebrow">The problem</div>
-      <h2 class="section-title">You stopped writing. But you still need to know what shipped.</h2>
+      <h2 class="section-title">Most software is shipped faster than anyone can read it.</h2>
       <p class="section-lede">
-        Prompting replaced writing. Agents produce most of the code, most of the copy, most of the config. You review a diff,
-        maybe. You approve a PR, maybe. But you do not fully understand what your AI built - and the documentation layer to
-        surface it was never designed for this world.
+        AI accelerated this, but the underlying problem is older: a codebase is only as transparent as its
+        documentation, and documentation is the first thing teams cut. The result is a system your team owns
+        on paper but can't fully see.
       </p>
 
       <div class="problem-grid">
         <div class="problem-card">
           <span class="stat">Blackbox</span>
-          <h3>AI ships code you did not write</h3>
-          <p>Thousands of lines per week, across files you never opened. You are the accountable party for software you have
-          never read line by line. The diff view is not enough.</p>
+          <h3>Code your team did not read</h3>
+          <p>An inherited service. A junior's first PR. A 3 AM hotfix from six months ago. AI-authored work, today.
+          Different sources, same outcome - you ship code your team can't fully explain.</p>
         </div>
         <div class="problem-card">
           <span class="stat">Markdown</span>
           <h3>A format built for writers</h3>
-          <p>Markdown exists to help humans author text efficiently. Humans are no longer the authors. Keeping a markdown
-          pipeline for docs you no longer write is legacy infrastructure.</p>
+          <p>Markdown exists to make typing prose ergonomic. When you do not type prose anymore - or when an
+          agent emits HTML directly - keeping markdown in the pipeline is legacy infrastructure.</p>
         </div>
         <div class="problem-card">
           <span class="stat">No memory</span>
-          <h3>Every prompt starts from zero</h3>
-          <p>Your agent has no record of what was approved last time, what patterns you accepted, what decisions you already
-          made. It rediscovers your codebase on every task - and contradicts itself.</p>
+          <h3>Every change starts from scratch</h3>
+          <p>Whether the next contributor is a teammate or an AI prompt, they rediscover your codebase. No record
+          of what was decided, no record of what was already accepted. Each change reinvents context.</p>
         </div>
         <div class="problem-card">
           <span class="stat">No audit</span>
-          <h3>No record of what the AI changed</h3>
-          <p>Commits tell you what files changed. They do not tell you what your AI decided, what it assumed, or what corners
-          of the system it touched that you did not review.</p>
+          <h3>Diff view is not enough</h3>
+          <p>A list of files changed and lines added does not tell you what your team chose, what it assumed, or
+          what corners of the system the change quietly touched.</p>
         </div>
       </div>
     </div>
@@ -86,35 +88,35 @@
   <section id="loop">
     <div class="wrap">
       <div class="section-eyebrow">The loop</div>
-      <h2 class="section-title">Agents write. You approve. Agents obey.</h2>
+      <h2 class="section-title">Whoever writes, your team approves, future work obeys.</h2>
       <p class="section-lede">
-        Glassdocs establishes a three-step cycle between you and your AI. Each role has its own verb. Each step reinforces the
-        next. Together they turn AI-authored code from a blackbox into a system you actually govern.
+        Three roles, three verbs. The loop runs the same whether the writer is a teammate, a contractor, or an
+        AI agent. The docs are the contract for what is in your codebase.
       </p>
 
       <div class="pillars">
         <div class="pillar">
           <div class="pillar-icon">1</div>
-          <h3>Agents write the docs</h3>
+          <h3>Whoever writes, documents</h3>
           <p>
-            Every change your AI makes comes with documentation - written by the agent, into <code>docs/</code>, as HTML.
-            One commit carries both the code and the human-readable explanation of what happened.
+            Every change lands with documentation - written alongside the code, into <code>docs/</code>, as HTML.
+            One commit carries both the work and the human-readable explanation of what happened.
           </p>
         </div>
         <div class="pillar">
           <div class="pillar-icon">2</div>
-          <h3>You read and approve</h3>
+          <h3>Your team reads and approves</h3>
           <p>
-            You do not write docs. You read them, curate them, and accept them as the record of truth. Visual, navigable,
-            renders in any browser. Edit what is wrong, approve what is right.
+            The docs are the diff you actually review. Visual, navigable, render in any browser without builds.
+            Edit what is wrong, approve what is right. The accepted version becomes the record of truth.
           </p>
         </div>
         <div class="pillar">
           <div class="pillar-icon">3</div>
-          <h3>Agents obey the docs</h3>
+          <h3>Future work obeys the docs</h3>
           <p>
-            On every future prompt, the agent reads the approved docs before touching code. Work that contradicts them is
-            flagged and rejected. The docs become the contract - enforced, not aspirational.
+            The next contributor - human or agent - reads the approved docs before touching code. Work that
+            contradicts them is flagged. The docs become the contract: enforced, not aspirational.
           </p>
         </div>
       </div>
@@ -132,28 +134,28 @@
             <div class="how-num">1</div>
             <div>
               <h4>Add Glassdocs to your repo</h4>
-              <p>One command scaffolds a <code>docs/</code> folder, the navigation shell, and the agent instructions that tell every future agent how to write into it.</p>
+              <p>One command scaffolds a <code>docs/</code> folder, the navigation shell, and the agent instructions that tell every contributor (human or AI) how to write into it.</p>
             </div>
           </li>
           <li class="how-step">
             <div class="how-num">2</div>
             <div>
-              <h4>Your agent works. It also documents.</h4>
-              <p>Whatever your agent builds - features, refactors, migrations - lands with an HTML doc page explaining what, why, and where. No separate documentation task. No drift.</p>
+              <h4>Every change ships with a doc</h4>
+              <p>Whatever lands - a feature, a refactor, a migration - lands with an HTML doc page explaining what, why, and where. No separate documentation task. No drift.</p>
             </div>
           </li>
           <li class="how-step">
             <div class="how-num">3</div>
             <div>
-              <h4>You review the docs in the PR</h4>
-              <p>The docs ARE the diff you read. Visual, structured, navigable. You approve or edit the docs - and the code lands alongside.</p>
+              <h4>Review the docs alongside the code</h4>
+              <p>The docs ARE the diff your team reads. Visual, structured, navigable. Approve or edit the docs - and the code lands with them.</p>
             </div>
           </li>
           <li class="how-step">
             <div class="how-num">4</div>
             <div>
-              <h4>Future agents read before they write</h4>
-              <p>The Glassdocs extension feeds approved docs back into every new agent session. Your AI cannot contradict what you already signed off on.</p>
+              <h4>Next contributor reads before they write</h4>
+              <p>The Glassdocs extension feeds approved docs back into the next contributor's session - whether that is a teammate or an AI prompt. The contract follows the code.</p>
             </div>
           </li>
         </ol>
@@ -163,7 +165,7 @@
             <span class="dot"></span><span class="dot"></span><span class="dot"></span>
             <span class="path">docs/auth/session-flow.html</span>
           </div>
-<pre><span class="tk-cmt">&lt;!-- Written by agent 2026-04-23. Approved by @sergey. --&gt;</span>
+<pre><span class="tk-cmt">&lt;!-- Written 2026-04-23. Approved by @sergey. --&gt;</span>
 <span class="tk-tag">&lt;article</span> <span class="tk-attr">class</span>=<span class="tk-str">"doc"</span><span class="tk-tag">&gt;</span>
   <span class="tk-tag">&lt;h1&gt;</span>Session flow<span class="tk-tag">&lt;/h1&gt;</span>
 
@@ -181,14 +183,53 @@
     </div>
   </section>
 
+  <section id="agents">
+    <div class="wrap">
+      <div class="section-eyebrow">The sharpest application</div>
+      <h2 class="section-title">Especially useful when AI is shipping your code.</h2>
+      <p class="section-lede">
+        AI accelerates the opacity crisis. You prompt, code appears, nobody fully read what shipped. Glassdocs
+        applies the same loop to AI work as to human work - the agent documents what it built, your team reviews
+        and accepts, the next prompt must respect what you accepted.
+      </p>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <span class="stat">Agent writes</span>
+          <h3>Documentation as part of the change</h3>
+          <p>Whatever your AI builds comes with an HTML doc page in the same commit. No separate "now write the docs"
+          step. Documentation is part of finishing the work.</p>
+        </div>
+        <div class="problem-card">
+          <span class="stat">You approve</span>
+          <h3>The docs are the diff you read</h3>
+          <p>Reviewing AI-written code line by line is impractical at the volume agents ship. Reviewing the doc that
+          explains the change is faster and surfaces what actually matters.</p>
+        </div>
+        <div class="problem-card">
+          <span class="stat">Agent obeys</span>
+          <h3>Approved docs bind the next prompt</h3>
+          <p>The next agent task starts with the approved docs as context. Work that contradicts them is flagged
+          before it lands - turning the docs into an enforcement surface, not just a reference.</p>
+        </div>
+        <div class="problem-card">
+          <span class="stat">Glassbox</span>
+          <h3>No more shipping a blackbox</h3>
+          <p>The result is a codebase your team actually owns - readable by humans, respected by future agent work,
+          audit-friendly by default. The blackbox becomes a glassbox.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="install">
     <div class="wrap">
       <div class="cta-block">
-        <h2>Stop shipping blackbox code.</h2>
-        <p>Install the extension, point it at your repo, and the next thing your agent ships will come with docs. Open source. MIT licensed. Free forever.</p>
+        <h2>Make your codebase legible.</h2>
+        <p>Install the extension, point it at your repo, and the next change your team ships will come with a doc. Open source. MIT licensed. Free forever.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#">Get the extension</a>
-          <a class="btn btn-secondary" href="https://github.com/Glassdocs/glassdocs">Star on GitHub</a>
+          <a class="btn btn-secondary" href="hosting.html">Host docs privately for free</a>
         </div>
       </div>
     </div>
@@ -199,7 +240,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <p class="footer-wordmark">Glassdocs</p>
-          <p>Open-source infrastructure for the post-writing era. Built because AI-authored code deserves a window, not a wall.</p>
+          <p>Open-source infrastructure for software you can actually see. Built because code your team did not read is code your team does not own.</p>
         </div>
         <div class="footer-col">
           <h5>Product</h5>
@@ -207,13 +248,14 @@
             <li><a href="#problem">Why</a></li>
             <li><a href="#loop">The loop</a></li>
             <li><a href="#how">How it works</a></li>
+            <li><a href="#agents">For AI teams</a></li>
             <li><a href="#install">Install</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Resources</h5>
           <ul>
-            <li><a href="https://docs.docsplaybook.dev">Documentation</a></li>
+            <li><a href="hosting.html">Free private hosting</a></li>
             <li><a href="https://github.com/Glassdocs/glassdocs">GitHub</a></li>
             <li><a href="https://github.com/Glassdocs/glassdocs/issues">Issues</a></li>
           </ul>
@@ -228,7 +270,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 Rocket Lab. MIT licensed.</span>
-        <span>Agents wrote. Humans approved.</span>
+        <span>Doc-first. Author-agnostic.</span>
       </div>
     </div>
   </footer>
